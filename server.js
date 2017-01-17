@@ -42,8 +42,6 @@ app.get('/new/*', (req, res) => {
   shortUrl = generateRandomInt();
   URLS[formattedUrl] = shortUrl;
 
-  console.log(URLS);
-
   res.send(JSON.stringify({
     "original_url": formattedUrl,
     "short_url": `http://${req.headers.host}/${shortUrl}`
