@@ -6,7 +6,7 @@ const URLS = {};
 
 const generateRandomInt = () => {
   const number = Math.floor(1000 + Math.random() * 9000);
-  const currentNumbers = Object.values(URLS);
+  const currentNumbers = Object.keys(URLS).map(key => URLS[key]);
   const isInURLS = currentNumbers.filter(num => num == number);
   if (isInURLS.length > 0) {
     generateRandomInt();
